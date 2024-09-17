@@ -18,6 +18,12 @@ class CalculatorTest(unittest.TestCase):
         expected = 5
         assert result == expected
 
+# Pasos:
+
+# primero activamos el entorno virtual
+
+# PS C:\Users\info\python-testing> .\venv\Scripts\activate   
+# (venv) PS C:\Users\info\python-testing> 
 
 # corremos el siguiente comando en la terminal:
 
@@ -25,10 +31,11 @@ class CalculatorTest(unittest.TestCase):
 
 # Resultado:
 
-# (venv) PS C:\Users\info\python-testing\PYTHON-TESTING> python -m unittest discover -s tests
+# (venv) PS C:\Users\info\python-testing> python -m unittest discover -s tests
 # ....
 # ----------------------------------------------------------------------
-# Ran 4 tests in 0.001s
+# Ran 4 tests in 0.000s
 
 # OK
-# (venv) PS C:\Users\info\python-testing\PYTHON-TESTING> 
+# (venv) PS C:\Users\info\python-testing>
+
