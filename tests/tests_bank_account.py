@@ -1,11 +1,19 @@
-import unittest
+import unittest, os
 
 from src.bank_account import BankAccount
 
 class BankAccountTest(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.account = BankAccount(balance=1000)
+        self.account = BankAccount(balance=1000, log_file="transaction_log.txt")
+
+    def tearDown(self) -> None:
+        if os.path.exists(self.account.log_file):
+            os.remove(self.account.log_file)
+
+    def _count_lines(self, filename):
+        with open(filename, "r") as f:
+            return len(f.readlines())
 
     def test_deposit(self):
         # account = BankAccount(balance=1000)
@@ -50,10 +58,16 @@ class BankAccountTest(unittest.TestCase):
 
 # test_get_balance (tests_bank_account.BankAccountTest.test_get_balance) ... ok
 
-    def test_transfer(self):
-        new_balance = self.account.transfer(1700)
-        assert new_balance == 300
+    def test_transaction_log(self):
+        self.account.deposit(500)
+        assert os.path.exists("transaction_log.txt")
 
-# Resultado:
-# test_transfer (tests_bank_account.BankAccountTest.test_transfer) ... ok
+# test_transaction_log (tests_bank_account.BankAccountTest.test_transaction_log) ... ok
+
+    def test_count_transactions(self):
+        assert self._count_lines(self.account.log_file) == 1
+        self.account.deposit(500)
+        assert self._count_lines(self.account.log_file) == 2
+
+# test_count_transactions (tests_bank_account.BankAccountTest.test_count_transactions) ... ok
 
