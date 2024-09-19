@@ -18,7 +18,8 @@ class BankAccountTest(unittest.TestCase):
     def test_deposit(self):
         # account = BankAccount(balance=1000)
         new_balance = self.account.deposit(500)
-        assert new_balance == 1500
+        # assert new_balance == 1500 se quita en la clase 7
+        self.assertEqual(new_balance, 1500, "El balance no es igual") # clase 7
 
 # .\venv\Scripts\activate    
 
@@ -42,7 +43,8 @@ class BankAccountTest(unittest.TestCase):
     def test_withdraw(self):
         # account = BankAccount(balance=1000)
         new_balance = self.account.withdraw(200)
-        assert new_balance == 800
+        # assert new_balance == 800
+        self.assertEqual(new_balance, 800, "El Balance no es igual") # clase 7
 
 # Resultado
 
@@ -52,7 +54,9 @@ class BankAccountTest(unittest.TestCase):
 
     def test_get_balance(self):
         # account = BankAccount(balance=1000)
-        assert self.account.get_balance() == 1000
+        # assert self.account.get_balance() == 1000
+        self.assertEqual(self.account.get_balance(), 1000) # clase 7
+
 
 # Resultado:
 
@@ -60,7 +64,8 @@ class BankAccountTest(unittest.TestCase):
 
     def test_transaction_log(self):
         self.account.deposit(500)
-        assert os.path.exists("transaction_log.txt")
+        # assert os.path.exists("transaction_log.txt")
+        self.assertTrue(os.path.exists("transaction_log.txt"))
 
 # test_transaction_log (tests_bank_account.BankAccountTest.test_transaction_log) ... ok
 
