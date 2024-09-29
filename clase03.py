@@ -13,9 +13,23 @@ paso 1
 
 pip install virtualenv
 
+PS C:\Users\info\github\python-testing> pip list 
+Package      Version
+------------ -------
+distlib      0.3.8
+filelock     3.16.1
+pip          24.2
+platformdirs 4.3.6
+virtualenv   20.26.6
+PS C:\Users\info\github\python-testing> 
+
 paso 2
 
  virtualenv venv # aquí nos crea la carpeta venv
+
+ #  python -m virtualenv venv
+
+ # https://stackoverflow.com/questions/48911582/virtualenv-to-path-on-windows-10?newreg=bdcb957ccab44cdcb4d68270b3867462
 
  paso 3
 
