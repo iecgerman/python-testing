@@ -77,4 +77,16 @@ class BankAccountTest(unittest.TestCase):
 
 # test_count_transactions (tests_bank_account.BankAccountTest.test_count_transactions) ... ok
 
-@patch # ya me perdi en el min 2:54
+# @patch  ya me perdi en el min 2:54 de la clase 13
+
+    def test_deposit_multiple_amounts(self):
+        test_cases = [
+            {"ammount": 100, "expected":1100},
+            {"ammount": 3000, "expected":4000},
+            {"ammount": 4500, "expected":5500},
+        ]
+        for case in test_cases:
+            with self.subTest(case=case):
+                self.account = BankAccount(balance=1000, log_file="transactions.txt")
+                new_balance = self.account.deposit(case["ammount"])
+                self.assertEqual(new_balance, case["expected"])
