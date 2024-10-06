@@ -18,6 +18,11 @@ class CalculatorTest(unittest.TestCase):
         expected = 5
         assert result == expected
 
+# Clase 17 - Coverage
+    def test_divide_by_zero(self):
+        with self.assertRaises(ValueError):            
+            divide(10,0)
+
 # Pasos:
 
 # primero activamos el entorno virtual

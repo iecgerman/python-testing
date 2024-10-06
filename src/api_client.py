@@ -25,8 +25,9 @@ def get_location(ip):
         "city": data["cityName"],
     }
 
-if __name__ == "__main__":
-    print (get_location("8.8.8.8"))
+# Clase 17 - Coverage
+# if __name__ == "__main__":
+#     print (get_location("8.8.8.8"))
 
 # Resultado
 
