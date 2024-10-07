@@ -79,7 +79,7 @@ class BankAccountTest(unittest.TestCase):
 
 # @patch  ya me perdi en el min 2:54 de la clase 13
 
-    def test_deposit_multiple_amounts(self):
+    def test_deposit_multiple_ammounts(self):
         test_cases = [
             {"ammount": 100, "expected":1100},
             {"ammount": 3000, "expected":4000},
